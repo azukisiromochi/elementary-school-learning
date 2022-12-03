@@ -9,7 +9,7 @@
         Next
       </van-button>
       <van-popup 
-        v-model:show="show" 
+        v-model="show" 
         closeable
         position="bottom"
         :style="{ height: '30%' }"
@@ -36,8 +36,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
 export default {
   name: 'PiePage',
   data() {

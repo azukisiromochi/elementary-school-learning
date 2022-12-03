@@ -1,11 +1,33 @@
 <template>
   <div class="container">
+    <van-divider>算数</van-divider>
     <div>
       <van-button 
         type="primary" 
         round 
-        @click="goPie">
+        @click="goNext('pie')">
         円周率の段
+      </van-button>
+    </div>
+    <van-divider>社会</van-divider>
+    <div>
+      <van-button 
+        type="warning" 
+        round 
+        @click="goNext('meiji1')">
+        明治時代①
+      </van-button>
+      <van-button 
+        type="warning" 
+        round 
+        @click="goNext('meiji2')">
+        明治時代②
+      </van-button>
+      <van-button 
+        type="warning" 
+        round 
+        @click="goNext('taisho')">
+        大正時代
       </van-button>
     </div>
   </div>
@@ -15,8 +37,8 @@
 export default {
   name: 'IndexPage',
   methods: {
-    goPie() {
-      this.$router.push('/pie')
+    goNext(pageName) {
+      this.$router.push('/' + pageName)
     }
   }
 }
@@ -27,6 +49,7 @@ export default {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -52,5 +75,9 @@ export default {
 
 .links {
   padding-top: 15px;
+}
+
+.van-divider {
+  width: 80vw;
 }
 </style>
